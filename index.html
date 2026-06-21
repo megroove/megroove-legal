@@ -3,200 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Megroove 使い方ガイド</title>
+<title>プライバシーポリシー | Megroove</title>
 <style>
-  :root{
-    --bg:#FBF7F1; --card:#FFFFFF; --ink:#2E2018; --sub:#6F5B4A;
-    --line:#EFE7DB; --accent:#993C1D; --accent-soft:#FAECE7; --cream:#CE9C68;
+  :root {
+    color-scheme: light dark;
   }
-  *{box-sizing:border-box;}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
-    line-height:1.85; font-size:16px;
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+    line-height: 1.8;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 20px 64px;
+    color: #1c1c1e;
+    background-color: #ffffff;
   }
-  .wrap{max-width:760px; margin:0 auto; padding:0 20px 80px;}
-  header{
-    text-align:center; padding:56px 20px 40px;
+  @media (prefers-color-scheme: dark) {
+    body {
+      color: #f2f2f7;
+      background-color: #000000;
+    }
   }
-  .logo{
-    width:92px; height:92px; margin:0 auto 20px; display:block;
-    border-radius:20px;
+  h1 {
+    font-size: 1.6em;
+    margin-bottom: 4px;
   }
-  h1{font-size:30px; margin:0 0 6px; letter-spacing:.02em;}
-  .tagline{color:var(--sub); font-size:15px; margin:0;}
-  h2{
-    font-size:21px; margin:48px 0 4px; padding-top:24px;
-    border-top:1px solid var(--line);
+  .last-updated {
+    color: #8e8e93;
+    font-size: 0.9em;
+    margin-bottom: 32px;
   }
-  h2:first-of-type{border-top:none; padding-top:0;}
-  h3{font-size:17px; margin:28px 0 8px; color:var(--accent);}
-  p{margin:10px 0;}
-  ul{margin:10px 0; padding-left:22px;}
-  li{margin:6px 0;}
-  .lead{color:var(--sub); font-size:15px;}
-  .card{
-    background:var(--card); border:1px solid var(--line);
-    border-radius:16px; padding:20px 22px; margin:16px 0;
+  h2 {
+    font-size: 1.15em;
+    margin-top: 2em;
+    margin-bottom: 0.6em;
+    border-bottom: 1px solid #d1d1d6;
+    padding-bottom: 0.3em;
   }
-  .tip{
-    background:var(--accent-soft); border-radius:14px;
-    padding:14px 18px; margin:16px 0; font-size:15px; color:#712B13;
+  p {
+    margin: 0 0 1em;
+    white-space: pre-wrap;
   }
-  .tip strong{color:var(--accent);}
-  .toc{
-    background:var(--card); border:1px solid var(--line);
-    border-radius:16px; padding:18px 22px; margin:8px 0 8px;
+  a {
+    color: #007aff;
+    word-break: break-all;
   }
-  .toc ol{margin:6px 0; padding-left:22px;}
-  .toc a{color:var(--ink); text-decoration:none;}
-  .toc a:hover{color:var(--accent); text-decoration:underline;}
-  .step{counter-reset:step;}
-  .step .row{
-    display:flex; gap:14px; align-items:flex-start; margin:14px 0;
-  }
-  .step .num{
-    flex:none; width:28px; height:28px; border-radius:50%;
-    background:var(--accent); color:#FAECE7; font-size:14px;
-    display:flex; align-items:center; justify-content:center; font-weight:600; margin-top:2px;
-  }
-  footer{
-    text-align:center; color:var(--sub); font-size:13px;
-    margin-top:56px; padding-top:24px; border-top:1px solid var(--line);
-  }
-  a{color:var(--accent);}
-  .muted{color:var(--sub); font-size:14px;}
 </style>
 </head>
 <body>
-<div class="wrap">
+  <h1>プライバシーポリシー</h1>
+  <p class="last-updated">最終更新日: 2026年6月13日</p>
 
-<header>
-  <img class="logo" src="logo.png" alt="Megroove" width="92" height="92">
-  <h1>Megroove 使い方ガイド</h1>
-  <p class="tagline">毎日の一杯を記録して、「あの美味しかったコーヒー」をもう一度。</p>
-</header>
+  <p>「Megroove」(以下「本アプリ」)は、個人のコーヒー抽出記録を目的としたアプリです。本アプリにおける利用者情報の取り扱いについて、以下のとおりプライバシーポリシーを定めます。</p>
 
-<div class="toc">
-  <strong>目次</strong>
-  <ol>
-    <li><a href="#about">Megrooveとは</a></li>
-    <li><a href="#start">はじめに（最初の準備）</a></li>
-    <li><a href="#record">コーヒーを記録する</a></li>
-    <li><a href="#detail">もっと詳しく記録する</a></li>
-    <li><a href="#customize">記録画面を自分好みにする</a></li>
-    <li><a href="#timer">蒸らしタイマー</a></li>
-    <li><a href="#stock">豆・器具・レシピの管理（ストック）</a></li>
-    <li><a href="#library">記録を振り返る（ライブラリ）</a></li>
-    <li><a href="#analytics">好みを分析する</a></li>
-    <li><a href="#caffeine">カフェイン管理</a></li>
-    <li><a href="#cafe">カフェでの一杯を記録する</a></li>
-    <li><a href="#backup">データのバックアップと引き継ぎ</a></li>
-    <li><a href="#privacy">プライバシーについて</a></li>
-    <li><a href="#faq">よくある質問</a></li>
-  </ol>
-</div>
+  <h2>1. データの保存場所</h2>
+  <p>本アプリで記録する豆・器具・レシピ・抽出記録・写真・カフェイン摂取記録などのデータは、すべて利用者の端末内にのみ保存されます。これらのデータが、本アプリの開発者を含む第三者のサーバーへ送信されることはありません。なお、本アプリの利用状況に関する統計データについては、6章に記載のとおりFirebase Analyticsを通じて送信される場合があります。</p>
 
-<h2 id="about">1. Megrooveとは</h2>
-<p>Megrooveは、あなたが日々淹れるコーヒーを記録し、味の傾向や淹れ方を振り返るためのアプリです。「美味しかったあの一杯を、もう一度淹れられるように」をいちばんの目的にしています。</p>
-<p>使い方はとてもシンプル。コーヒーを淹れたら、その豆・淹れ方・味の感想をさっと残すだけ。記録が増えるほど、あなたの好みの傾向が見えてきたり、過去のお気に入りを再現できるようになります。</p>
-<div class="tip"><strong>ポイント：</strong>記録は面倒だと続きません。Megrooveは「前回の内容がそのまま残っている」ので、変えたところだけ直せばOK。最短で、豆とレシピと星の評価だけでも記録できます。</div>
+  <h2>2. ヘルスケアデータ(睡眠データ)について</h2>
+  <p>本アプリは、カフェイン摂取と睡眠の関係を表示するため、Appleの「ヘルスケア」アプリから睡眠データを読み取る場合があります。この機能は利用者が許可した場合のみ動作します。読み取ったデータは本アプリ内での表示・計算にのみ使用され、端末の外部へ送信・共有されることはありません。</p>
 
-<h2 id="start">2. はじめに（最初の準備）</h2>
-<p>初回起動時に、簡単な紹介画面が表示されます。読み進めるとすぐに使い始められます。</p>
-<p>最初に、よく使う<strong>豆</strong>を登録しておくとスムーズです。ただ、後から記録の途中でも追加できるので、まずは1杯記録してみるのがいちばんの近道です。</p>
+  <h2>3. 写真データについて</h2>
+  <p>豆・器具・抽出記録に添付する写真は、利用者が任意で登録するものであり、端末内にのみ保存されます。</p>
 
-<h2 id="record">3. コーヒーを記録する</h2>
-<p>ホーム画面の「<strong>淹れる</strong>」ボタンが記録のスタートです。押すと記録画面が開きます。</p>
-<div class="card step">
-  <div class="row"><div class="num">1</div><div><strong>豆を選ぶ</strong><br>淹れた豆を選びます。豆には焙煎日からの経過日数が自動で表示されるので、「今日は焙煎から何日目か」もひと目で分かります。</div></div>
-  <div class="row"><div class="num">2</div><div><strong>淹れ方を確認・調整する</strong><br>粉の量・お湯の量を入れると、比率（例：1対16）が自動で計算されます。挽き目やお湯の温度も調整できます。前回と同じなら、そのままでかまいません。</div></div>
-  <div class="row"><div class="num">3</div><div><strong>味を評価する</strong><br>星で総合評価をつけ、「明るい酸」「フローラル」などの言葉のチップで印象を残せます。</div></div>
-  <div class="row"><div class="num">4</div><div><strong>記録する</strong><br>「この一杯を記録する」を押せば完了です。記録した瞬間、ささやかなお祝いの演出が流れます。</div></div>
-</div>
-<div class="tip">記録の節目（10杯目・50杯目など）には、特別なお祝いの演出が表示されます。続けるほど楽しくなる仕掛けです。</div>
+  <h2>4. データのバックアップ・書き出しについて</h2>
+  <p>本アプリには、記録データをファイルとして書き出し・読み込みする機能があります。書き出されたファイルの保存場所・共有方法は、利用者ご自身の管理・責任のもとで行われるものとします。</p>
 
-<h2 id="detail">4. もっと詳しく記録する</h2>
-<p>記録画面の「<strong>詳細を入力</strong>」を開くと、こだわり派向けの項目が現れます。普段は閉じておけるので、必要なときだけ使えます。</p>
-<ul>
-  <li><strong>味の評価（カッピング）</strong>：酸味・甘み・苦味・ボディ・後味を、それぞれスライダーで細かく記録できます。</li>
-  <li><strong>器具</strong>：使ったドリッパーなどを選べます。未登録のものは、その場で「＋追加」から登録できます。</li>
-  <li><strong>抽出</strong>：総抽出時間や注湯の回数を残せます。</li>
-  <li><strong>メモ</strong>：「次回は少し湯温を下げる」など、自由な気づきを書き留められます。</li>
-</ul>
-<div class="tip"><strong>その場で追加：</strong>記録の途中で「この豆、まだ登録してなかった」と気づいても大丈夫。「＋追加」を押せば、記録画面を閉じずに豆や器具をその場で登録でき、そのまま記録を続けられます。</div>
+  <h2>5. 通知について</h2>
+  <p>本アプリは、利用者が許可した場合に、カフェイン摂取に関する通知を端末に表示する場合があります。この通知は端末内で完結し、外部への送信は行いません。</p>
 
-<h2 id="customize">5. 記録画面を自分好みにする</h2>
-<p>記録画面に表示する項目は、あなたの使い方に合わせて並べ替えられます。各項目を「メインに表示」「詳細にしまう」「非表示」の3つに振り分けられます。</p>
-<p>たとえば、味の細かい評価をいつも使う方は、カッピングのスライダーを「メインに表示」に移しておけば、記録画面を開いてすぐ入力できます。逆に使わない項目は隠してすっきりさせられます。</p>
-<p class="muted">並べ替えても、過去に記録した内容が消えることはありません。隠した項目も、表示に戻せばまた見られます。</p>
+  <h2>6. アクセス解析・広告について</h2>
+  <p>本アプリは、アプリの利用状況を把握し品質改善に役立てるため、Googleが提供するFirebase Analyticsを利用しています。Firebase Analyticsは、画面の表示状況や記録機能の利用状況などの利用統計データ、およびアプリのインストールごとに割り振られる識別子を収集し、Googleのサーバーに送信します。この識別子は、氏名・メールアドレスなど個人を特定できる情報と結びつくものではありません。</p>
+  <p>本アプリでは広告識別子(IDFA)の収集を無効化しており、AppleのApp Tracking Transparencyによる許可は不要です。収集したデータを第三者への広告配信や、他のアプリ・ウェブサイトをまたいだ利用者の追跡(トラッキング)に利用することはありません。</p>
+  <p>豆・器具・レシピ・抽出記録・写真・カフェイン摂取記録など、利用者が入力するコーヒーの記録データ自体は分析の対象とはならず、引き続き端末内にのみ保存されます。Firebase Analyticsの詳細は、Googleのプライバシーポリシー(<a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>)をご確認ください。</p>
+  <p>広告配信サービスは利用していません。</p>
 
-<h2 id="timer">6. 蒸らしタイマー</h2>
-<p>コーヒーの「蒸らし」を計るためのタイマーが、記録画面の詳細の中にあります。ワンタップで開始でき、時間になると音と振動でお知らせします（アラームは数秒で自動的に止まります）。</p>
-<ul>
-  <li>初期の蒸らし時間は20秒です。設定画面でお好みの長さに変更できます。</li>
-  <li>レシピごとに専用の蒸らし時間を覚えさせることもできます。</li>
-</ul>
+  <h2>7. プライバシーポリシーの変更</h2>
+  <p>本ポリシーの内容は、必要に応じて変更される場合があります。変更後の内容は、本アプリ内に表示された時点で効力を生じるものとします。</p>
 
-<h2 id="stock">7. 豆・器具・レシピの管理（ストック）</h2>
-<p>「ストック」では、お持ちの豆・器具や、よく使う淹れ方（レシピ）を管理できます。</p>
-<ul>
-  <li><strong>豆</strong>：産地・焙煎度・焙煎日などを登録できます。使った量から、おおよその残量も表示されます。</li>
-  <li><strong>器具</strong>：ドリッパーやカップなどを登録できます。</li>
-  <li><strong>レシピ</strong>：粉量・湯量・お湯の温度などをまとめた「淹れ方のテンプレート」です。記録時に呼び出せば、毎回の入力がぐっと楽になります。</li>
-</ul>
+  <h2>8. お問い合わせ</h2>
+  <p>本ポリシーに関するお問い合わせは、以下の連絡先までお願いいたします。<br>megroove.app@gmail.com</p>
 
-<h2 id="library">8. 記録を振り返る（ライブラリ）</h2>
-<p>「ライブラリ」では、これまでの記録を一覧で見返せます。日付・豆・評価でしぼり込めます。</p>
-<p>表示スタイルは、横長のカード・写真を大きく見せるカード・アナログレコード風のカードから選べます。レコード風カードは、タップするとレコードのように回転します。</p>
-<div class="tip">過去の記録を開くと、その淹れ方をもう一度再現できます。「あの一杯、また飲みたい」と思ったら、同じ条件ですぐに淹れられます。</div>
-
-<h2 id="analytics">9. 好みを分析する</h2>
-<p>記録が増えると、「分析」タブであなたの好みの傾向が見えてきます。</p>
-<ul>
-  <li><strong>好みの形（レーダーチャート）</strong>：酸味・甘み・苦味・ボディ・後味の傾向を五角形で表示します。高く評価した一杯ほど強く反映されるので、「あなたが本当に好きな味の輪郭」が分かります。</li>
-  <li><strong>ランキング</strong>：月間・年間のお気に入りを表示します。</li>
-  <li><strong>産地パスポート</strong>：これまで飲んだコーヒーの産地を、国ごとのスタンプとして集めていけます。</li>
-  <li>焙煎からの経過日数と評価の関係など、淹れ方を深掘りするためのデータも見られます。</li>
-</ul>
-<p class="muted">分析はすべて、あなたの端末の中だけで計算されます。記録が少ないうちは表示されない項目もありますが、続けるうちに見えてきます。</p>
-
-<h2 id="caffeine">10. カフェイン管理</h2>
-<p>「カフェイン」タブでは、一日のカフェイン摂取量を記録し、体の中にどれくらい残っているかのおおよその推移を見られます。就寝予定の時刻を設定しておくと、睡眠に影響しそうなタイミングをやさしくお知らせします。</p>
-<p class="muted">表示される数値はあくまで一般的な目安にもとづく推定で、医学的なアドバイスではありません。カフェインの適量は体質や健康状態によって異なります。気になる点は専門家にご相談ください。</p>
-
-<h2 id="cafe">11. カフェでの一杯を記録する</h2>
-<p>自分で淹れたコーヒーだけでなく、カフェで飲んだ一杯も記録できます。店名やドリンク名、感想を残しておけば、お気に入りのカフェやメニューを後から振り返れます。</p>
-
-<h2 id="backup">12. データのバックアップと引き継ぎ</h2>
-<p>機種変更などに備えて、記録をまるごとファイルに書き出して保存し、別の端末で読み込むことができます。設定画面から行えます。</p>
-<ul>
-  <li>バックアップファイルには、パスフレーズ（合言葉）による暗号化をかけることもできます（任意）。</li>
-  <li>暗号化したファイルは、パスフレーズを忘れると復元できなくなります。大切に保管してください。</li>
-</ul>
-<div class="tip">iPhoneの標準のバックアップ（iCloudやパソコンへのバックアップ）を使えば、写真も含めてそのまま新しい端末に引き継げます。</div>
-
-<h2 id="privacy">13. プライバシーについて</h2>
-<p>あなたの記録は、基本的にあなたの端末の中だけに保存されます。アプリの改善のために、どの機能が使われているかといった利用状況の分析は行いますが、豆の名前やメモ、写真などの個人を特定できる内容は送信していません。</p>
-<p>詳しくは<a href="https://megroove.github.io/megroove-legal/">プライバシーポリシー</a>をご覧ください。</p>
-
-<h2 id="faq">14. よくある質問</h2>
-<h3>記録は最低どこまで入力すればいいですか？</h3>
-<p>豆・レシピ・星の評価の3つだけでも記録できます。あとは必要に応じて、詳しい項目を足していけます。</p>
-<h3>途中で豆や器具を追加できますか？</h3>
-<p>はい。記録画面の「＋追加」から、記録を中断せずにその場で登録できます。</p>
-<h3>記録した内容は後から直せますか？</h3>
-<p>はい。ライブラリから記録を開いて、編集できます。</p>
-<h3>データは外部に送られますか？</h3>
-<p>記録の中身（豆名・メモ・写真など）は端末内に保存され、送信されません。利用状況の分析データのみ、アプリ改善の目的で扱っています。</p>
-<h3>機種変更しても記録は残りますか？</h3>
-<p>iPhoneの標準バックアップ、またはアプリのバックアップ機能を使えば引き継げます（「12. データのバックアップと引き継ぎ」を参照）。</p>
-
-<footer>
-  <p>Megroove 使い方ガイド<br>
-  お問い合わせ：megroove.app@gmail.com</p>
-</footer>
-
-</div>
 </body>
 </html>

@@ -1,202 +1,330 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Megroove 使い方ガイド</title>
-<style>
-  :root{
-    --bg:#FBF7F1; --card:#FFFFFF; --ink:#2E2018; --sub:#6F5B4A;
-    --line:#EFE7DB; --accent:#993C1D; --accent-soft:#FAECE7; --cream:#CE9C68;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
-    line-height:1.85; font-size:16px;
-  }
-  .wrap{max-width:760px; margin:0 auto; padding:0 20px 80px;}
-  header{
-    text-align:center; padding:56px 20px 40px;
-  }
-  .logo{
-    width:92px; height:92px; margin:0 auto 20px; display:block;
-    border-radius:20px;
-  }
-  h1{font-size:30px; margin:0 0 6px; letter-spacing:.02em;}
-  .tagline{color:var(--sub); font-size:15px; margin:0;}
-  h2{
-    font-size:21px; margin:48px 0 4px; padding-top:24px;
-    border-top:1px solid var(--line);
-  }
-  h2:first-of-type{border-top:none; padding-top:0;}
-  h3{font-size:17px; margin:28px 0 8px; color:var(--accent);}
-  p{margin:10px 0;}
-  ul{margin:10px 0; padding-left:22px;}
-  li{margin:6px 0;}
-  .lead{color:var(--sub); font-size:15px;}
-  .card{
-    background:var(--card); border:1px solid var(--line);
-    border-radius:16px; padding:20px 22px; margin:16px 0;
-  }
-  .tip{
-    background:var(--accent-soft); border-radius:14px;
-    padding:14px 18px; margin:16px 0; font-size:15px; color:#712B13;
-  }
-  .tip strong{color:var(--accent);}
-  .toc{
-    background:var(--card); border:1px solid var(--line);
-    border-radius:16px; padding:18px 22px; margin:8px 0 8px;
-  }
-  .toc ol{margin:6px 0; padding-left:22px;}
-  .toc a{color:var(--ink); text-decoration:none;}
-  .toc a:hover{color:var(--accent); text-decoration:underline;}
-  .step{counter-reset:step;}
-  .step .row{
-    display:flex; gap:14px; align-items:flex-start; margin:14px 0;
-  }
-  .step .num{
-    flex:none; width:28px; height:28px; border-radius:50%;
-    background:var(--accent); color:#FAECE7; font-size:14px;
-    display:flex; align-items:center; justify-content:center; font-weight:600; margin-top:2px;
-  }
-  footer{
-    text-align:center; color:var(--sub); font-size:13px;
-    margin-top:56px; padding-top:24px; border-top:1px solid var(--line);
-  }
-  a{color:var(--accent);}
-  .muted{color:var(--sub); font-size:14px;}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Megroove 取扱説明書</title>
+<meta name="description" content="Megroove の使い方ガイド。記録の始め方から分析、バックアップまで。">
+<meta name="theme-color" content="#150a04">
+<style>html,body{background:#150a04;margin:0}</style>
 </head>
 <body>
-<div class="wrap">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg:        #150a04;
+    --bg-2:      #1a0f07;
+    --card:      #2E2018;
+    --card-2:    #3e3020;
+    --line:      #43331f;
+    --ink:       #F7EFE6;
+    --tan:       #CE9C68;
+    --muted:     #a3866a;
+    --faint:     #6b5a4a;
+    --coral:     #B4471F;
+    --coral-2:   #993C1D;
+    --ok:        #4ade80;
+    --serif: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Songti SC", serif;
+    --sans: system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    --maxw: 780px;
+  }
 
-<header>
-  <img class="logo" src="logo.png" alt="Megroove" width="92" height="92">
-  <h1>Megroove 使い方ガイド</h1>
-  <p class="tagline">毎日の一杯を記録して、「あの美味しかったコーヒー」をもう一度。</p>
-</header>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  .doc {
+    background:
+      radial-gradient(1200px 600px at 50% -200px, #2a170c 0%, rgba(42,23,12,0) 60%),
+      var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.8;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: .01em;
+  }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
 
-<div class="toc">
-  <strong>目次</strong>
-  <ol>
-    <li><a href="#about">Megrooveとは</a></li>
-    <li><a href="#start">はじめに（最初の準備）</a></li>
-    <li><a href="#record">コーヒーを記録する</a></li>
-    <li><a href="#detail">もっと詳しく記録する</a></li>
-    <li><a href="#customize">記録画面を自分好みにする</a></li>
-    <li><a href="#timer">蒸らしタイマー</a></li>
-    <li><a href="#stock">豆・器具・レシピの管理（ストック）</a></li>
-    <li><a href="#library">記録を振り返る（ライブラリ）</a></li>
-    <li><a href="#analytics">好みを分析する</a></li>
-    <li><a href="#caffeine">カフェイン管理</a></li>
-    <li><a href="#cafe">カフェでの一杯を記録する</a></li>
-    <li><a href="#backup">データのバックアップと引き継ぎ</a></li>
-    <li><a href="#privacy">プライバシーについて</a></li>
-    <li><a href="#faq">よくある質問</a></li>
-  </ol>
-</div>
+  a { color: var(--tan); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--tan); outline-offset: 3px; border-radius: 6px; }
 
-<h2 id="about">1. Megrooveとは</h2>
-<p>Megrooveは、あなたが日々淹れるコーヒーを記録し、味の傾向や淹れ方を振り返るためのアプリです。「美味しかったあの一杯を、もう一度淹れられるように」をいちばんの目的にしています。</p>
-<p>使い方はとてもシンプル。コーヒーを淹れたら、その豆・淹れ方・味の感想をさっと残すだけ。記録が増えるほど、あなたの好みの傾向が見えてきたり、過去のお気に入りを再現できるようになります。</p>
-<div class="tip"><strong>ポイント：</strong>記録は面倒だと続きません。Megrooveは「前回の内容がそのまま残っている」ので、変えたところだけ直せばOK。最短で、豆とレシピと星の評価だけでも記録できます。</div>
+  /* ── Hero ─────────────────────────────────────────── */
+  .hero { text-align: center; padding: 72px 20px 40px; }
+  .disc { display: block; margin: 0 auto 26px; }
+  .eyebrow {
+    font-size: 12px; letter-spacing: .34em; text-transform: uppercase;
+    color: var(--tan); margin: 0 0 14px;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-weight: 600;
+    font-size: clamp(30px, 7vw, 46px); line-height: 1.2; margin: 0;
+    text-wrap: balance; letter-spacing: .02em;
+  }
+  .lede {
+    color: var(--tan); font-size: clamp(15px, 2.6vw, 18px);
+    max-width: 30em; margin: 18px auto 0; text-wrap: balance;
+  }
+  .meta { color: var(--faint); font-size: 12.5px; margin-top: 22px; letter-spacing: .04em; }
 
-<h2 id="start">2. はじめに（最初の準備）</h2>
-<p>初回起動時に、簡単な紹介画面が表示されます。読み進めるとすぐに使い始められます。</p>
-<p>最初に、よく使う<strong>豆</strong>を登録しておくとスムーズです。ただ、後から記録の途中でも追加できるので、まずは1杯記録してみるのがいちばんの近道です。</p>
+  /* ── Table of contents ────────────────────────────── */
+  .toc {
+    background: linear-gradient(180deg, var(--card) 0%, #291b12 100%);
+    border: 1px solid var(--line); border-radius: 18px;
+    padding: 22px 22px 10px; margin: 8px 0 12px;
+  }
+  .toc h2 { font-family: var(--sans); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--tan); margin: 0 0 14px; font-weight: 600; }
+  .toc ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 2px; }
+  @media (min-width: 620px) { .toc ol { grid-template-columns: 1fr 1fr; column-gap: 26px; } }
+  .toc li a {
+    display: flex; align-items: baseline; gap: 12px;
+    text-decoration: none; color: var(--ink); padding: 9px 6px;
+    border-bottom: 1px solid transparent; border-radius: 8px;
+  }
+  .toc li a:hover { color: var(--tan); background: #ffffff08; }
+  .toc .n { font-variant-numeric: tabular-nums; color: var(--coral); font-family: var(--serif); font-size: 15px; width: 1.4em; flex: none; }
 
-<h2 id="record">3. コーヒーを記録する</h2>
-<p>ホーム画面の「<strong>淹れる</strong>」ボタンが記録のスタートです。押すと記録画面が開きます。</p>
-<div class="card step">
-  <div class="row"><div class="num">1</div><div><strong>豆を選ぶ</strong><br>淹れた豆を選びます。豆には焙煎日からの経過日数が自動で表示されるので、「今日は焙煎から何日目か」もひと目で分かります。</div></div>
-  <div class="row"><div class="num">2</div><div><strong>淹れ方を確認・調整する</strong><br>粉の量・お湯の量を入れると、比率（例：1対16）が自動で計算されます。挽き目やお湯の温度も調整できます。前回と同じなら、そのままでかまいません。</div></div>
-  <div class="row"><div class="num">3</div><div><strong>味を評価する</strong><br>星で総合評価をつけ、「明るい酸」「フローラル」などの言葉のチップで印象を残せます。</div></div>
-  <div class="row"><div class="num">4</div><div><strong>記録する</strong><br>「この一杯を記録する」を押せば完了です。記録した瞬間、ささやかなお祝いの演出が流れます。</div></div>
-</div>
-<div class="tip">記録の節目（10杯目・50杯目など）には、特別なお祝いの演出が表示されます。続けるほど楽しくなる仕掛けです。</div>
+  /* ── Sections ─────────────────────────────────────── */
+  section { padding: 40px 0; border-top: 1px solid var(--line); }
+  section:first-of-type { border-top: 0; }
+  .sec-head { display: flex; align-items: center; gap: 16px; margin: 0 0 6px; }
+  .badge {
+    flex: none; width: 40px; height: 40px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: radial-gradient(circle at 50% 50%, var(--coral) 0 34%, #2a1509 36% 100%);
+    box-shadow: 0 0 0 1px #00000055, inset 0 0 0 1px #ffffff12;
+    font-family: var(--serif); font-size: 16px; color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .badge span { position: relative; z-index: 1; }
+  h2.sec-title { font-family: var(--serif); font-weight: 600; font-size: clamp(21px, 4vw, 27px); margin: 0; letter-spacing: .01em; text-wrap: balance; }
+  .sec-sub { color: var(--tan); margin: 2px 0 22px 56px; font-size: 14.5px; }
+  @media (max-width: 520px) { .sec-sub { margin-left: 0; } }
+  section p { margin: 0 0 14px; }
+  section p.note { color: var(--tan); }
+  strong { color: #ffffff; font-weight: 600; }
+  em { color: var(--tan); font-style: normal; }
 
-<h2 id="detail">4. もっと詳しく記録する</h2>
-<p>記録画面の「<strong>詳細を入力</strong>」を開くと、こだわり派向けの項目が現れます。普段は閉じておけるので、必要なときだけ使えます。</p>
-<ul>
-  <li><strong>味の評価（カッピング）</strong>：酸味・甘み・苦味・ボディ・後味を、それぞれスライダーで細かく記録できます。</li>
-  <li><strong>器具</strong>：使ったドリッパーなどを選べます。未登録のものは、その場で「＋追加」から登録できます。</li>
-  <li><strong>抽出</strong>：総抽出時間や注湯の回数を残せます。</li>
-  <li><strong>メモ</strong>：「次回は少し湯温を下げる」など、自由な気づきを書き留められます。</li>
-</ul>
-<div class="tip"><strong>その場で追加：</strong>記録の途中で「この豆、まだ登録してなかった」と気づいても大丈夫。「＋追加」を押せば、記録画面を閉じずに豆や器具をその場で登録でき、そのまま記録を続けられます。</div>
+  /* steps + lists */
+  .steps { counter-reset: step; list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 14px; }
+  .steps > li {
+    counter-increment: step; position: relative; padding: 16px 18px 16px 54px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+  }
+  .steps > li::before {
+    content: counter(step); position: absolute; left: 16px; top: 15px;
+    width: 26px; height: 26px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: var(--card-2); color: var(--tan); font-size: 13px; font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .steps b { color: var(--ink); }
 
-<h2 id="customize">5. 記録画面を自分好みにする</h2>
-<p>記録画面に表示する項目は、あなたの使い方に合わせて並べ替えられます。各項目を「メインに表示」「詳細にしまう」「非表示」の3つに振り分けられます。</p>
-<p>たとえば、味の細かい評価をいつも使う方は、カッピングのスライダーを「メインに表示」に移しておけば、記録画面を開いてすぐ入力できます。逆に使わない項目は隠してすっきりさせられます。</p>
-<p class="muted">並べ替えても、過去に記録した内容が消えることはありません。隠した項目も、表示に戻せばまた見られます。</p>
+  ul.plain { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 10px; }
+  ul.plain > li { position: relative; padding-left: 22px; }
+  ul.plain > li::before {
+    content: ""; position: absolute; left: 2px; top: .72em;
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--coral); box-shadow: 0 0 0 3px #b4471f26;
+  }
 
-<h2 id="timer">6. 蒸らしタイマー</h2>
-<p>コーヒーの「蒸らし」を計るためのタイマーが、記録画面の詳細の中にあります。ワンタップで開始でき、時間になると音と振動でお知らせします（アラームは数秒で自動的に止まります）。</p>
-<ul>
-  <li>初期の蒸らし時間は20秒です。設定画面でお好みの長さに変更できます。</li>
-  <li>レシピごとに専用の蒸らし時間を覚えさせることもできます。</li>
-</ul>
+  /* feature grid */
+  .grid { display: grid; gap: 12px; margin-top: 6px; }
+  @media (min-width: 560px) { .grid.two { grid-template-columns: 1fr 1fr; } }
+  .tile { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+  .tile h3 { margin: 0 0 4px; font-size: 15.5px; font-family: var(--sans); font-weight: 700; color: var(--ink); }
+  .tile p { margin: 0; font-size: 13.5px; color: var(--tan); line-height: 1.7; }
 
-<h2 id="stock">7. 豆・器具・レシピの管理（ストック）</h2>
-<p>「ストック」では、お持ちの豆・器具や、よく使う淹れ方（レシピ）を管理できます。</p>
-<ul>
-  <li><strong>豆</strong>：産地・焙煎度・焙煎日などを登録できます。使った量から、おおよその残量も表示されます。</li>
-  <li><strong>器具</strong>：ドリッパーやカップなどを登録できます。</li>
-  <li><strong>レシピ</strong>：粉量・湯量・お湯の温度などをまとめた「淹れ方のテンプレート」です。記録時に呼び出せば、毎回の入力がぐっと楽になります。</li>
-</ul>
+  /* callout */
+  .callout {
+    display: flex; gap: 13px; align-items: flex-start;
+    background: #2a1509; border: 1px solid var(--line); border-left: 3px solid var(--coral);
+    border-radius: 12px; padding: 15px 17px; margin: 18px 0 0;
+  }
+  .callout .k { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--coral); font-weight: 700; margin: 0 0 3px; }
+  .callout p { margin: 0; font-size: 13.5px; color: var(--tan); line-height: 1.7; }
+  .callout svg { flex: none; margin-top: 2px; }
 
-<h2 id="library">8. 記録を振り返る（ライブラリ）</h2>
-<p>「ライブラリ」では、これまでの記録を一覧で見返せます。日付・豆・評価でしぼり込めます。</p>
-<p>表示スタイルは、横長のカード・写真を大きく見せるカード・アナログレコード風のカードから選べます。レコード風カードは、タップするとレコードのように回転します。</p>
-<div class="tip">過去の記録を開くと、その淹れ方をもう一度再現できます。「あの一杯、また飲みたい」と思ったら、同じ条件ですぐに淹れられます。</div>
+  .pill { display: inline-block; background: var(--card-2); color: var(--tan); border-radius: 999px; padding: 1px 10px; font-size: 12.5px; white-space: nowrap; }
 
-<h2 id="analytics">9. 好みを分析する</h2>
-<p>記録が増えると、「分析」タブであなたの好みの傾向が見えてきます。</p>
-<ul>
-  <li><strong>好みの形（レーダーチャート）</strong>：酸味・甘み・苦味・ボディ・後味の傾向を五角形で表示します。高く評価した一杯ほど強く反映されるので、「あなたが本当に好きな味の輪郭」が分かります。</li>
-  <li><strong>ランキング</strong>：月間・年間のお気に入りを表示します。</li>
-  <li><strong>産地パスポート</strong>：これまで飲んだコーヒーの産地を、国ごとのスタンプとして集めていけます。</li>
-  <li>焙煎からの経過日数と評価の関係など、淹れ方を深掘りするためのデータも見られます。</li>
-</ul>
-<p class="muted">分析はすべて、あなたの端末の中だけで計算されます。記録が少ないうちは表示されない項目もありますが、続けるうちに見えてきます。</p>
+  /* footer */
+  footer { border-top: 1px solid var(--line); padding: 34px 0 60px; text-align: center; color: var(--faint); }
+  footer .mail { font-size: 15px; }
+  .groove { height: 1px; background: repeating-linear-gradient(90deg, var(--line) 0 6px, transparent 6px 12px); margin: 0; border: 0; }
 
-<h2 id="caffeine">10. カフェイン管理</h2>
-<p>「カフェイン」タブでは、一日のカフェイン摂取量を記録し、体の中にどれくらい残っているかのおおよその推移を見られます。就寝予定の時刻を設定しておくと、睡眠に影響しそうなタイミングをやさしくお知らせします。</p>
-<p class="muted">表示される数値はあくまで一般的な目安にもとづく推定で、医学的なアドバイスではありません。カフェインの適量は体質や健康状態によって異なります。気になる点は専門家にご相談ください。</p>
+  @media (prefers-reduced-motion: no-preference) {
+    .disc .spin { transform-box: fill-box; transform-origin: center; animation: rot 14s linear infinite; }
+    @keyframes rot { to { transform: rotate(360deg); } }
+  }
+</style>
 
-<h2 id="cafe">11. カフェでの一杯を記録する</h2>
-<p>自分で淹れたコーヒーだけでなく、カフェで飲んだ一杯も記録できます。店名やドリンク名、感想を残しておけば、お気に入りのカフェやメニューを後から振り返れます。</p>
+<div class="doc">
+  <div class="wrap">
 
-<h2 id="backup">12. データのバックアップと引き継ぎ</h2>
-<p>機種変更などに備えて、記録をまるごとファイルに書き出して保存し、別の端末で読み込むことができます。設定画面から行えます。</p>
-<ul>
-  <li>バックアップファイルには、パスフレーズ（合言葉）による暗号化をかけることもできます（任意）。</li>
-  <li>暗号化したファイルは、パスフレーズを忘れると復元できなくなります。大切に保管してください。</li>
-</ul>
-<div class="tip">iPhoneの標準のバックアップ（iCloudやパソコンへのバックアップ）を使えば、写真も含めてそのまま新しい端末に引き継げます。</div>
+    <header class="hero">
+      <svg class="disc" width="112" height="112" viewBox="0 0 120 120" aria-hidden="true">
+        <g class="spin">
+          <circle cx="60" cy="60" r="57" fill="#1a0d05"/>
+          <circle cx="60" cy="60" r="50" fill="none" stroke="#3a2411" stroke-width="1.4"/>
+          <circle cx="60" cy="60" r="43" fill="none" stroke="#3a2411" stroke-width="1.4"/>
+          <circle cx="60" cy="60" r="36" fill="none" stroke="#3a2411" stroke-width="1.4"/>
+          <circle cx="60" cy="60" r="29" fill="none" stroke="#3a2411" stroke-width="1.4"/>
+          <circle cx="60" cy="60" r="22" fill="#993C1D"/>
+          <circle cx="60" cy="60" r="3.4" fill="#0d0502"/>
+        </g>
+      </svg>
+      <p class="eyebrow">Megroove ・ 取扱説明書</p>
+      <h1>美味しかったあの一杯を、<br>もう一度淹れるために。</h1>
+      <p class="lede">Megroove は、コーヒーを淹れる・飲む毎日を記録して、あなただけの「淹れ方の知見」を育てるアプリです。この説明書で、記録の始め方から分析まで一通りご案内します。</p>
+      <p class="meta">すべて端末内で完結 ・ アカウント登録不要 ・ 無料</p>
+    </header>
 
-<h2 id="privacy">13. プライバシーについて</h2>
-<p>あなたの記録は、基本的にあなたの端末の中だけに保存されます。アプリの改善のために、どの機能が使われているかといった利用状況の分析は行いますが、豆の名前やメモ、写真などの個人を特定できる内容は送信していません。</p>
-<p>詳しくは<a href="https://megroove.github.io/megroove-legal/">プライバシーポリシー</a>をご覧ください。</p>
+    <nav class="toc" aria-label="目次">
+      <h2>目次</h2>
+      <ol>
+        <li><a href="#start"><span class="n">1</span><span>はじめかた — 最初の一杯</span></a></li>
+        <li><a href="#brew"><span class="n">2</span><span>淹れる（自宅の記録）</span></a></li>
+        <li><a href="#later"><span class="n">3</span><span>味の評価は、あとからでも</span></a></li>
+        <li><a href="#cafe"><span class="n">4</span><span>カフェを記録</span></a></li>
+        <li><a href="#library"><span class="n">5</span><span>ライブラリで振り返る</span></a></li>
+        <li><a href="#analysis"><span class="n">6</span><span>分析で知見を育てる</span></a></li>
+        <li><a href="#stock"><span class="n">7</span><span>ストック（豆・器具・レシピ）</span></a></li>
+        <li><a href="#caffeine"><span class="n">8</span><span>カフェインと睡眠</span></a></li>
+        <li><a href="#data"><span class="n">9</span><span>データの保存とバックアップ</span></a></li>
+        <li><a href="#pwa"><span class="n">10</span><span>ホーム画面に追加</span></a></li>
+      </ol>
+    </nav>
 
-<h2 id="faq">14. よくある質問</h2>
-<h3>記録は最低どこまで入力すればいいですか？</h3>
-<p>豆・レシピ・星の評価の3つだけでも記録できます。あとは必要に応じて、詳しい項目を足していけます。</p>
-<h3>途中で豆や器具を追加できますか？</h3>
-<p>はい。記録画面の「＋追加」から、記録を中断せずにその場で登録できます。</p>
-<h3>記録した内容は後から直せますか？</h3>
-<p>はい。ライブラリから記録を開いて、編集できます。</p>
-<h3>データは外部に送られますか？</h3>
-<p>記録の中身（豆名・メモ・写真など）は端末内に保存され、送信されません。利用状況の分析データのみ、アプリ改善の目的で扱っています。</p>
-<h3>機種変更しても記録は残りますか？</h3>
-<p>iPhoneの標準バックアップ、またはアプリのバックアップ機能を使えば引き継げます（「12. データのバックアップと引き継ぎ」を参照）。</p>
+    <main>
+      <section id="start">
+        <div class="sec-head"><span class="badge"><span>1</span></span><h2 class="sec-title">はじめかた — 最初の一杯</h2></div>
+        <p class="sec-sub">ホームの2つのボタンが、すべての記録の入り口です。</p>
+        <ul class="plain">
+          <li><strong>「淹れる（自宅の一杯）」</strong>… 自分で淹れたコーヒーを記録します。</li>
+          <li><strong>「カフェを記録（お店の一杯）」</strong>… お店で飲んだ一杯を記録します。</li>
+        </ul>
+        <div class="callout">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B4471F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5l3 2"/></svg>
+          <div><p class="k">まずはここから</p><p>むずかしい設定は不要です。ボタンを押して、淹れた一杯を1つ記録してみてください。使うほど、あとの分析が深まります。</p></div>
+        </div>
+      </section>
 
-<footer>
-  <p>Megroove 使い方ガイド<br>
-  お問い合わせ：megroove.app@gmail.com</p>
-</footer>
+      <section id="brew">
+        <div class="sec-head"><span class="badge"><span>2</span></span><h2 class="sec-title">淹れる（自宅の記録）</h2></div>
+        <p class="sec-sub">開いた瞬間に前回の値が入っています。変えたところだけ直して保存。</p>
+        <ol class="steps">
+          <li><b>豆を選ぶ</b>。未登録でも、その場で追加できます（名前と焙煎日だけでOK）。</li>
+          <li><b>粉量・湯量</b>を調整すると、<em>比率（例 1:16）が自動計算</em>されます。挽き目・湯温も。</li>
+          <li><b>星とフレーバー</b>で評価。ここまでで保存できます（最小入力）。</li>
+          <li>必要なら<b>「詳細を入力」</b>を開いて、カッピング・器具（複数可）・抽出時間・メモ・写真・シーンを追加。</li>
+        </ol>
+        <div class="grid two" style="margin-top:16px">
+          <div class="tile"><h3>ドリップバッグにも対応</h3><p>抽出方法で「ドリップバッグ」を選ぶと、粉量や挽き目の欄が隠れ、銘柄だけで手軽に記録できます。</p></div>
+          <div class="tile"><h3>蒸らし・抽出タイマー</h3><p>詳細の中に蒸らしタイマーと抽出ストップウォッチ。計った時間をそのまま記録に残せます。</p></div>
+        </div>
+        <div class="callout">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B4471F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4M3 5h4"/><path d="M6 17v4M4 19h4"/><path d="M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5z"/></svg>
+          <div><p class="k">その場で追加</p><p>豆・器具が未登録でも、記録画面を離れずに追加できます。追加したものはストックにも保存され、次回から選ぶだけです。</p></div>
+        </div>
 
+        <div class="tile" style="margin-top:16px">
+          <h3>記録画面を自分仕様に（カスタマイズ）</h3>
+          <p><strong>設定 →「記録画面のカスタマイズ」</strong>で、記録する項目を自由に組み替えられます。各項目の<strong>並び順</strong>を入れ替えたり、<strong>メイン表示／詳細（折りたたみ内）／非表示</strong>に振り分け可能。よく使うカッピングや写真は<em>メインへ昇格</em>、使わない項目は<em>非表示</em>に、あなたの淹れ方に合わせて整えられます。蒸らしタイマーの初期時間もここで設定。「豆」だけは固定で、<strong>非表示にしても過去の記録に入力済みの値は保持</strong>されます（再表示すれば戻ります）。</p>
+        </div>
+      </section>
+
+      <section id="later">
+        <div class="sec-head"><span class="badge"><span>3</span></span><h2 class="sec-title">味の評価は、あとからでも</h2></div>
+        <p class="sec-sub">条件は淹れている最中に、味は飲んでから。無理に急いで評価しなくて大丈夫。</p>
+        <p>星を付けずに保存すると、その一杯は<strong>「まだ針を落としていない盤」</strong>として棚に並びます。飲んでみてから、ゆっくり評価を足せます。</p>
+        <ul class="plain">
+          <li>ホームの<strong>「針を落とす一杯」</strong>から、星（と、開けばカッピング・フレーバーも）を追加。</li>
+          <li>記録の詳細画面でも同じように後付けできます。</li>
+          <li>ライブラリの<span class="pill">評価待ち</span>フィルタで、未評価の一杯だけをまとめて見られます。</li>
+        </ul>
+        <p class="note">評価を足すと、静かに置かれていた盤に“針が落ちて”再生される——そんな体験にしています。</p>
+      </section>
+
+      <section id="cafe">
+        <div class="sec-head"><span class="badge"><span>4</span></span><h2 class="sec-title">カフェを記録</h2></div>
+        <p class="sec-sub">お店で飲んだ一杯も、同じ手軽さで。</p>
+        <ul class="plain">
+          <li><strong>カフェ名</strong>は、主要チェーン＋あなたの履歴から候補が出ます（ひらがな入力でもOK）。もちろん自由入力も。</li>
+          <li>ドリンク種別・サイズ・価格・評価・フレーバー・写真を残せます。</li>
+          <li>行きつけのお店を選ぶと、前回のドリンク情報が自動で埋まります。</li>
+        </ul>
+      </section>
+
+      <section id="library">
+        <div class="sec-head"><span class="badge"><span>5</span></span><h2 class="sec-title">ライブラリで振り返る</h2></div>
+        <p class="sec-sub">記録は月ごとにまとまり、3つの見た目で楽しめます。</p>
+        <div class="grid two">
+          <div class="tile"><h3>3つの表示モード</h3><p>リスト／写真カード／アナログ盤。写真を撮っていれば、レコード棚のように並びます。</p></div>
+          <div class="tile"><h3>探す・絞る</h3><p>豆名・カフェ名・メモ・フレーバーで検索。星評価や「評価待ち」で絞り込み。</p></div>
+        </div>
+        <p style="margin-top:16px">記録の詳細からは、<strong>「この条件で淹れる」</strong>でワンタップ再現。うまくいった一杯を、いつでも呼び戻せます。</p>
+      </section>
+
+      <section id="analysis">
+        <div class="sec-head"><span class="badge"><span>6</span></span><h2 class="sec-title">分析で知見を育てる</h2></div>
+        <p class="sec-sub">記録が積み重なるほど、あなただけの傾向が見えてきます。</p>
+        <div class="grid two">
+          <div class="tile"><h3>好みのレーダー</h3><p>高評価の一杯ほど強く反映した、あなたの味の傾向。</p></div>
+          <div class="tile"><h3>ベスト条件・ゴールデンレシピ</h3><p>★4以上が集中する比率・湯温・挽き目・時間を一枚に。</p></div>
+          <div class="tile"><h3>豆の飲み頃</h3><p>焙煎からの日数と評価から、あなたのピークを提示。</p></div>
+          <div class="tile"><h3>トレンド・ランキング・累計</h3><p>月別の杯数と評価、今月/今年のトップ、総杯数や消費量まで。</p></div>
+        </div>
+      </section>
+
+      <section id="stock">
+        <div class="sec-head"><span class="badge"><span>7</span></span><h2 class="sec-title">ストック（豆・器具・レシピ）</h2></div>
+        <p class="sec-sub">よく使うものを登録しておくと、記録がさらに速くなります。</p>
+        <ul class="plain">
+          <li><strong>写真を登録</strong>できます。豆は袋・パッケージ、器具はその姿を。ピッカーやホームで一目で分かります。</li>
+          <li>豆の<strong>内容量</strong>を入れておくと、記録の粉量から<em>残量を自動計算</em>。飲み切ったらアーカイブへ。</li>
+          <li>レシピ（粉量・湯量・挽き目・湯温のテンプレート）で、いつもの淹れ方をすぐ呼び出し。</li>
+        </ul>
+      </section>
+
+      <section id="caffeine">
+        <div class="sec-head"><span class="badge"><span>8</span></span><h2 class="sec-title">カフェインと睡眠</h2></div>
+        <p class="sec-sub">飲んだ量を、生活と付き合う参考に。</p>
+        <ul class="plain">
+          <li>記録から<strong>体内の残留量（推定）</strong>と、<strong>就寝時の予測</strong>を表示。目標値との比較で確認できます。</li>
+          <li>コーヒー以外（エナジードリンク・紅茶・緑茶など）も「その他の飲み物」から記録できます。</li>
+          <li>任意で<strong>睡眠の記録</strong>（3段階）をオンにすると、就寝時のカフェインと翌朝の眠りの傾向を<em>数値だけ</em>で見られます。</li>
+        </ul>
+        <div class="callout">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B4471F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+          <div><p class="k">健康情報について</p><p>これらの数値は一般的なモデルによる推定・目安であり、医学的な助言・診断ではありません。感じ方には個人差があります。体調に不安があるときは専門家にご相談ください。（出典：食品安全委員会・EFSA 等）</p></div>
+        </div>
+      </section>
+
+      <section id="data">
+        <div class="sec-head"><span class="badge"><span>9</span></span><h2 class="sec-title">データの保存とバックアップ</h2></div>
+        <p class="sec-sub">記録は、この端末のブラウザの中だけに保存されます。</p>
+        <p>サーバーには何も送られません。プライバシーは守られますが、その分<strong>この端末を離れると記録は引き継がれません</strong>。ブラウザのデータ消去などで失われることもあります。</p>
+        <ul class="plain">
+          <li>設定の<strong>「データ管理」</strong>から、いつでも JSON ファイルにバックアップ（エクスポート）できます。<em>バックアップは永久に無料</em>です。</li>
+          <li>機種変更や別端末への移行は、書き出したファイルを新しい端末で読み込む（インポート）だけ。</li>
+          <li>大切な記録を守るため、<strong>ときどきのバックアップ</strong>をおすすめします。</li>
+        </ul>
+      </section>
+
+      <section id="pwa">
+        <div class="sec-head"><span class="badge"><span>10</span></span><h2 class="sec-title">ホーム画面に追加</h2></div>
+        <p class="sec-sub">アプリのように、素早く・オフラインでも。</p>
+        <p>ブラウザの共有メニューから<strong>「ホーム画面に追加」</strong>すると、アイコンから直接起動でき、電波がなくても記録できます。更新は次回起動時に自動で反映されます。</p>
+      </section>
+    </main>
+  </div>
+
+  <hr class="groove">
+  <footer>
+    <div class="wrap">
+      <p>わからないことや、ご要望・不具合のご連絡はこちらへ。</p>
+      <p class="mail"><a href="mailto:megroove.app@gmail.com">megroove.app@gmail.com</a></p>
+      <p style="margin-top:22px; font-size:12px;">Megroove — コーヒーとレコードの記録アプリ</p>
+    </div>
+  </footer>
 </div>
 </body>
 </html>

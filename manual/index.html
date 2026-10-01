@@ -196,11 +196,12 @@
     <main>
       <section id="start">
         <div class="sec-head"><span class="badge"><span>1</span></span><h2 class="sec-title">はじめかた — 最初の一杯</h2></div>
-        <p class="sec-sub">ホームの2つのボタンが、すべての記録の入り口です。</p>
+        <p class="sec-sub">ホームの主役はターンテーブル。その下の2つのボタンが、すべての記録の入り口です。</p>
         <ul class="plain">
-          <li><strong>「淹れる（自宅の一杯）」</strong>… 自分で淹れたコーヒーを記録します。</li>
-          <li><strong>「カフェを記録（お店の一杯）」</strong>… お店で飲んだ一杯を記録します。</li>
+          <li><strong>「淹れる」</strong>… 自分で淹れたコーヒーを記録します。</li>
+          <li><strong>「カフェ」</strong>… お店で飲んだ一杯を記録します。</li>
         </ul>
+        <p style="margin-top:12px">2回目からは、ボタンの下に<strong>「いつもの一杯」</strong>が出ます。前回と同じ条件（よく使うレシピも選べます）を呼び出して、<em>数タップで記録を終えられます</em>。粉量や湯温を今日だけ変えることもでき、評価はあとからでも構いません。保存直後なら「取り消す」で戻せます。</p>
         <div class="callout">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B4471F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5l3 2"/></svg>
           <div><p class="k">まずはここから</p><p>むずかしい設定は不要です。ボタンを押して、淹れた一杯を1つ記録してみてください。使うほど、あとの分析が深まります。</p></div>
@@ -209,20 +210,26 @@
 
       <section id="brew">
         <div class="sec-head"><span class="badge"><span>2</span></span><h2 class="sec-title">淹れる（自宅の記録）</h2></div>
-        <p class="sec-sub">開いた瞬間に前回の値が入っています。変えたところだけ直して保存。</p>
+        <p class="sec-sub">開いた瞬間に前回の値が入っています。変えたところだけ直して保存。画面は淹れる流れに沿って2面に分かれています。</p>
         <ol class="steps">
-          <li><b>豆を選ぶ</b>。未登録でも、その場で追加できます（名前と焙煎日だけでOK）。</li>
+          <li><b>Side A（準備と抽出）</b>で<b>豆を選ぶ</b>。未登録でも、その場で追加できます（名前と焙煎日だけでOK）。</li>
           <li><b>粉量・湯量</b>を調整すると、<em>比率（例 1:16）が自動計算</em>されます。挽き目・湯温も。</li>
-          <li><b>星とフレーバー</b>で評価。ここまでで保存できます（最小入力）。</li>
-          <li>必要なら<b>「詳細を入力」</b>を開いて、カッピング・器具（複数可）・抽出時間・メモ・写真・シーンを追加。</li>
+          <li><b>「針を落として抽出スタート」</b>を押すと、盤が回る計測画面に。蒸らしも同時に始まります。</li>
+          <li>「抽出完了」で<em>総抽出時間がそのまま記録に入り</em>、<b>Side B（味わいと評価）</b>へ。</li>
+          <li><b>星とフレーバー</b>で評価して保存。カッピング・メモ・写真・聴いていた曲は「詳細を入力」の中にあります。</li>
         </ol>
         <div class="grid two" style="margin-top:16px">
           <div class="tile"><h3>ドリップバッグにも対応</h3><p>抽出方法で「ドリップバッグ」を選ぶと、粉量や挽き目の欄が隠れ、銘柄だけで手軽に記録できます。</p></div>
-          <div class="tile"><h3>蒸らし・抽出タイマー</h3><p>詳細の中に蒸らしタイマーと抽出ストップウォッチ。計った時間をそのまま記録に残せます。</p></div>
+          <div class="tile"><h3>蒸らし・抽出タイマー</h3><p>Side A の「針を落として抽出スタート」で、盤が回り針が進む計測画面に。蒸らしのカウントダウンも重なります。「抽出完了」で計った時間がそのまま記録に入ります。</p></div>
         </div>
         <div class="callout">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B4471F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v4M3 5h4"/><path d="M6 17v4M4 19h4"/><path d="M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5z"/></svg>
           <div><p class="k">その場で追加</p><p>豆・器具が未登録でも、記録画面を離れずに追加できます。追加したものはストックにも保存され、次回から選ぶだけです。</p></div>
+        </div>
+
+        <div class="grid two" style="margin-top:16px">
+          <div class="tile"><h3>聴いていた曲</h3><p>Side B の「詳細を入力」に、その一杯のときに聴いていた曲名とアーティストを残せます。2回目からは候補から選ぶだけ。あとでライブラリの検索からも辿れます。</p></div>
+          <div class="tile"><h3>レコードの色</h3><p>抽出中に回る盤の色を7色から選べます（既定は豆の焙煎度に合わせる）。抽出中の画面か、設定から変更できます。</p></div>
         </div>
 
         <div class="tile" style="margin-top:16px">
@@ -255,12 +262,13 @@
 
       <section id="library">
         <div class="sec-head"><span class="badge"><span>5</span></span><h2 class="sec-title">ライブラリで振り返る</h2></div>
-        <p class="sec-sub">記録は月ごとにまとまり、3つの見た目で楽しめます。</p>
+        <p class="sec-sub">記録は月ごとに「1枚のアルバム」としてまとまります。</p>
         <div class="grid two">
-          <div class="tile"><h3>3つの表示モード</h3><p>リスト／写真カード／アナログ盤。写真を撮っていれば、レコード棚のように並びます。</p></div>
+          <div class="tile"><h3>2つの表示モード</h3><p>ジャケット（棚）とリスト。ジャケットの色は産地から自動で決まるので、写真を撮っていない記録も1枚の盤として並びます。</p></div>
           <div class="tile"><h3>探す・絞る</h3><p>豆名・カフェ名・メモ・フレーバーで検索。星評価や「評価待ち」で絞り込み。</p></div>
         </div>
-        <p style="margin-top:16px">記録の詳細からは、<strong>「この条件で淹れる」</strong>でワンタップ再現。うまくいった一杯を、いつでも呼び戻せます。</p>
+        <p style="margin-top:16px">月の見出しには、<strong>その月のベストの一杯の写真</strong>（無ければ産地の色）と枚数・平均★が付きます。その月がどんな月だったかが一目で分かります。</p>
+        <p style="margin-top:12px">記録の詳細は<strong>レコードのライナーノーツ</strong>のような作りです。ジャケット → 素材と道具 → 抽出データ → 味わいの記録 → その日のこと、の順に読めます。<strong>「この条件で淹れる」</strong>でワンタップ再現もでき、うまくいった一杯をいつでも呼び戻せます。</p>
       </section>
 
       <section id="analysis">
@@ -271,6 +279,7 @@
           <div class="tile"><h3>ベスト条件・ゴールデンレシピ</h3><p>★4以上が集中する比率・湯温・挽き目・時間を一枚に。</p></div>
           <div class="tile"><h3>豆の飲み頃</h3><p>焙煎からの日数と評価から、あなたのピークを提示。</p></div>
           <div class="tile"><h3>トレンド・ランキング・累計</h3><p>月別の杯数と評価、今月/今年のトップ、総杯数や消費量まで。</p></div>
+          <div class="tile"><h3>Year in Coffee</h3><p>1年の記録を、LPのジャケットのような1枚にまとめます。よく飲んだ豆はトラックリストとして並び、画像として保存・共有できます（端末内で作られ、どこにも送信されません）。</p></div>
         </div>
       </section>
 
@@ -290,6 +299,7 @@
         <ul class="plain">
           <li>記録から<strong>体内の残留量（推定）</strong>と、<strong>就寝時の予測</strong>を表示。目標値との比較で確認できます。</li>
           <li>コーヒー以外（エナジードリンク・紅茶・緑茶など）も「その他の飲み物」から記録できます。</li>
+          <li><strong>あなたの傾向</strong>として、直近7日の日別摂取量と、飲んでいる時間帯の内訳（「15時以降が◯%」）も表示します。</li>
           <li>任意で<strong>睡眠の記録</strong>（3段階）をオンにすると、就寝時のカフェインと翌朝の眠りの傾向を<em>数値だけ</em>で見られます。</li>
         </ul>
         <div class="callout">
@@ -301,7 +311,7 @@
       <section id="data">
         <div class="sec-head"><span class="badge"><span>9</span></span><h2 class="sec-title">データの保存とバックアップ</h2></div>
         <p class="sec-sub">記録は、この端末のブラウザの中だけに保存されます。</p>
-        <p>サーバーには何も送られません。プライバシーは守られますが、その分<strong>この端末を離れると記録は引き継がれません</strong>。ブラウザのデータ消去などで失われることもあります。</p>
+        <p><strong>記録した内容・写真・個人情報がサーバーに送られることはありません。</strong>サービス改善のため、Cookieを使わない匿名のアクセス解析（ページの表示回数など）だけは送信されます ― あなたを個人として識別せず、記録の中身は一切含みません（詳しくは設定のプライバシーポリシー）。記録そのものは端末内に留まるため、その分<strong>この端末を離れると記録は引き継がれません</strong>。ブラウザのデータ消去などで失われることもあります。</p>
         <ul class="plain">
           <li>設定の<strong>「データ管理」</strong>から、いつでも JSON ファイルにバックアップ（エクスポート）できます。<em>バックアップは永久に無料</em>です。</li>
           <li>機種変更や別端末への移行は、書き出したファイルを新しい端末で読み込む（インポート）だけ。</li>

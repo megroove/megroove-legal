@@ -186,10 +186,11 @@
         <li><a href="#cafe"><span class="n">4</span><span>カフェを記録</span></a></li>
         <li><a href="#library"><span class="n">5</span><span>ライブラリで振り返る</span></a></li>
         <li><a href="#analysis"><span class="n">6</span><span>分析で知見を育てる</span></a></li>
-        <li><a href="#stock"><span class="n">7</span><span>ストック（豆・器具・レシピ）</span></a></li>
-        <li><a href="#caffeine"><span class="n">8</span><span>カフェインと睡眠</span></a></li>
-        <li><a href="#data"><span class="n">9</span><span>データの保存とバックアップ</span></a></li>
-        <li><a href="#pwa"><span class="n">10</span><span>ホーム画面に追加</span></a></li>
+        <li><a href="#passport"><span class="n">7</span><span>産地パスポート</span></a></li>
+        <li><a href="#stock"><span class="n">8</span><span>ストック（豆・器具・レシピ）</span></a></li>
+        <li><a href="#caffeine"><span class="n">9</span><span>カフェインと睡眠</span></a></li>
+        <li><a href="#data"><span class="n">10</span><span>データの保存とバックアップ</span></a></li>
+        <li><a href="#pwa"><span class="n">11</span><span>ホーム画面に追加</span></a></li>
       </ol>
     </nav>
 
@@ -283,18 +284,35 @@
         </div>
       </section>
 
+      <section id="passport">
+        <div class="sec-head"><span class="badge"><span>7</span></span><h2 class="sec-title">産地パスポート</h2></div>
+        <p class="sec-sub">飲んだ産地に、国旗のスタンプが押されていきます。</p>
+        <ul class="plain">
+          <li>豆やカフェ記録に<strong>産地</strong>を入れておくと、その国のスタンプが押されます。「エチオピア イルガチェフェ」も「エチオピア シダモ」も、<em>同じエチオピアのスタンプ</em>にまとまります。</li>
+          <li><strong>大陸ごとの進捗</strong>が出ます。まだ出会っていない国はたたんであり、開くと次に探す国が見られます。</li>
+          <li><strong>稀少度が4段階</strong>（ブロンズ／シルバー／ゴールド／プラチナ）。日本で豆を手に入れる難しさの目安で、スタンプの縁の色が変わります。ゴールドとプラチナにはじめて出会った一杯は、保存のときに少しだけ祝います。</li>
+          <li><strong>産地が未登録の豆</strong>はこの画面にまとめて出るので、その場で登録できます。登録したぶんだけスタンプがすぐ増えます。</li>
+        </ul>
+        <div class="callout">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B4471F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5l3 2"/></svg>
+          <div><p class="k">ブレンドの豆は？</p><p>ストックの豆編集から<strong>複数の産地</strong>を入れられます。構成する国すべてにスタンプが押されますが、ブレンドでだけ出会った国は<em>控えめな破線のスタンプ</em>です。いつかその国をシングルオリジンで味わうと、スタンプが完成します。</p></div>
+        </div>
+        <p style="margin-top:16px">全43か国は、すべて実際にコーヒーを生産している国です。ただし日本で手に入る難しさには大きな差があり、プラチナの産地は店頭でめったに見かけません。なお、ハワイだけは国ではないため国旗がなく、州花のハイビスカスになります。</p>
+      </section>
+
       <section id="stock">
-        <div class="sec-head"><span class="badge"><span>7</span></span><h2 class="sec-title">ストック（豆・器具・レシピ）</h2></div>
+        <div class="sec-head"><span class="badge"><span>8</span></span><h2 class="sec-title">ストック（豆・器具・レシピ）</h2></div>
         <p class="sec-sub">よく使うものを登録しておくと、記録がさらに速くなります。</p>
         <ul class="plain">
           <li><strong>写真を登録</strong>できます。豆は袋・パッケージ、器具はその姿を。ピッカーやホームで一目で分かります。</li>
           <li>豆の<strong>内容量</strong>を入れておくと、記録の粉量から<em>残量を自動計算</em>。飲み切ったらアーカイブへ。</li>
+          <li>産地は、ブレンドなら「<strong>ブレンド（複数の産地）として入力</strong>」から<em>複数の国</em>を登録できます。分かる範囲だけで構いません。</li>
           <li>レシピ（粉量・湯量・挽き目・湯温のテンプレート）で、いつもの淹れ方をすぐ呼び出し。</li>
         </ul>
       </section>
 
       <section id="caffeine">
-        <div class="sec-head"><span class="badge"><span>8</span></span><h2 class="sec-title">カフェインと睡眠</h2></div>
+        <div class="sec-head"><span class="badge"><span>9</span></span><h2 class="sec-title">カフェインと睡眠</h2></div>
         <p class="sec-sub">飲んだ量を、生活と付き合う参考に。</p>
         <ul class="plain">
           <li>記録から<strong>体内の残留量（推定）</strong>と、<strong>就寝時の予測</strong>を表示。目標値との比較で確認できます。</li>
@@ -309,7 +327,7 @@
       </section>
 
       <section id="data">
-        <div class="sec-head"><span class="badge"><span>9</span></span><h2 class="sec-title">データの保存とバックアップ</h2></div>
+        <div class="sec-head"><span class="badge"><span>10</span></span><h2 class="sec-title">データの保存とバックアップ</h2></div>
         <p class="sec-sub">記録は、この端末のブラウザの中だけに保存されます。</p>
         <p><strong>記録した内容・写真・個人情報がサーバーに送られることはありません。</strong>サービス改善のため、Cookieを使わない匿名のアクセス解析（ページの表示回数など）だけは送信されます ― あなたを個人として識別せず、記録の中身は一切含みません（詳しくは設定のプライバシーポリシー）。記録そのものは端末内に留まるため、その分<strong>この端末を離れると記録は引き継がれません</strong>。ブラウザのデータ消去などで失われることもあります。</p>
         <ul class="plain">
@@ -320,7 +338,7 @@
       </section>
 
       <section id="pwa">
-        <div class="sec-head"><span class="badge"><span>10</span></span><h2 class="sec-title">ホーム画面に追加</h2></div>
+        <div class="sec-head"><span class="badge"><span>11</span></span><h2 class="sec-title">ホーム画面に追加</h2></div>
         <p class="sec-sub">アプリのように、素早く・オフラインでも。</p>
         <p>ブラウザの共有メニューから<strong>「ホーム画面に追加」</strong>すると、アイコンから直接起動でき、電波がなくても記録できます。更新は次回起動時に自動で反映されます。</p>
       </section>

@@ -307,6 +307,8 @@
         <div class="sec-head"><span class="badge"><span>8</span></span><h2 class="sec-title">ストック（豆・器具・レシピ）</h2></div>
         <p class="sec-sub">よく使うものを登録しておくと、記録がさらに速くなります。</p>
         <ul class="plain">
+          <li>豆を追加するときは、いちばん上の<strong>「ラベルから読み取る（AI）」</strong>で袋の裏のラベルを撮ると（最大3枚）、名前・ロースター・産地・焙煎日・内容量・おすすめの淹れ方など<em>読み取れた項目が空いている欄に入ります</em>。入った欄には AI の印が付くので、<strong>確かめてから保存</strong>してください（自動では保存しません）。<strong>1日1回</strong>まで（日本時間0時に戻ります）。うまく読めなかったときは回数は減りません。</li>
+          <li>豆を追加の入力途中で「閉じる」を押しても、<em>次に開くと続きから</em>再開できます。最初からやり直すときは「消して最初から」。</li>
           <li><strong>写真を登録</strong>できます。豆は袋の表面を<strong>リスト画像</strong>として（撮影でもアルバムからでも）、器具はその姿を。ピッカーやホームで一目で分かります。</li>
           <li>豆には<strong>ロースター</strong>・袋に書かれた<strong>フレーバーノート</strong>・<strong>おすすめの淹れ方</strong>も残せます（どれも任意）。</li>
           <li>豆の<strong>内容量</strong>を入れておくと、記録の粉量から<em>残量を自動計算</em>。飲み切ったら、ストックの行の<strong>「飲み切り」を1タップ</strong>で記録画面の選択肢から外れます（取り消しもできます）。残量が0になった一杯を保存したときは、アプリからも<em>飲み切りにするか</em>そっと尋ねます。</li>
@@ -317,6 +319,10 @@
         <div class="callout">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B4471F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v5h-5"/></svg>
           <div><p class="k">同じ豆を買ったら、上書きではなく「買い直す」</p><p>前の袋を編集して焙煎日を書き換えると、<em>過去の記録の「焙煎から◯日」が新しい日付で表示され</em>、残量も前の袋の消費を引きずってしまいます。袋ごとに登録すれば、過去の一杯はそのときの焙煎日のまま残ります。買い直したあとは「前回と同じ」でも<strong>新しい袋が自動で選ばれます</strong>。分析では<em>袋をまたいで合算</em>されるので、同じ豆の記録がばらけることはありません。</p></div>
+        </div>
+        <div class="callout">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B4471F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>
+          <div><p class="k">ラベルの読み取りと写真</p><p>読み取りを使ったときだけ、選んだ写真を Anthropic 社の AI（Claude）に送ります（初回に確認します）。Megroove は写真を保存せず、Anthropic 社も原則30日以内に削除し、AI の学習には使いません。AI は<em>読み間違えることがある</em>ので、入った内容は必ず確かめてください。iPhone の写真（HEIC）がパソコンのブラウザで読めないときは、iPhone の Safari で開くか JPEG で保存し直してください。</p></div>
         </div>
       </section>
 
@@ -338,7 +344,7 @@
       <section id="data">
         <div class="sec-head"><span class="badge"><span>10</span></span><h2 class="sec-title">データの保存とバックアップ</h2></div>
         <p class="sec-sub">記録は、この端末のブラウザの中だけに保存されます。</p>
-        <p><strong>記録した内容・写真・個人情報がサーバーに送られることはありません。</strong>サービス改善のため、Cookieを使わない匿名のアクセス解析（ページの表示回数など）だけは送信されます ― あなたを個人として識別せず、記録の中身は一切含みません（詳しくは設定のプライバシーポリシー）。記録そのものは端末内に留まるため、その分<strong>この端末を離れると記録は引き継がれません</strong>。ブラウザのデータ消去などで失われることもあります。</p>
+        <p><strong>記録した内容・写真・個人情報がサーバーに送られることはありません。</strong>例外は、あなたが<strong>豆ラベルの読み取り（AI）</strong>を使ったときに、選んだ写真を送ることだけです（第8節）。サービス改善のため、Cookieを使わない匿名のアクセス解析（ページの表示回数など）だけは送信されます ― あなたを個人として識別せず、記録の中身は一切含みません（詳しくは設定のプライバシーポリシー）。記録そのものは端末内に留まるため、その分<strong>この端末を離れると記録は引き継がれません</strong>。ブラウザのデータ消去などで失われることもあります。</p>
         <ul class="plain">
           <li>設定の<strong>「データ管理」</strong>から、いつでも JSON ファイルにバックアップ（エクスポート）できます。<em>バックアップは永久に無料</em>です。</li>
           <li>機種変更や別端末への移行は、書き出したファイルを新しい端末で読み込む（インポート）だけ。</li>
@@ -359,6 +365,7 @@
     <div class="wrap">
       <p>わからないことや、ご要望・不具合のご連絡はこちらへ。</p>
       <p class="mail"><a href="mailto:megroove.app@gmail.com">megroove.app@gmail.com</a></p>
+      <p style="margin-top:18px;">Megroove は個人で作っています。気に入っていただけたら、<a href="https://ko-fi.com/kazu18" target="_blank" rel="noopener noreferrer">Ko-fi で応援</a>していただけるとうれしいです（任意・機能は変わりません）。<br>プライバシーポリシーと利用規約は、アプリの<strong>設定 →「このアプリについて」</strong>にあります。</p>
       <p style="margin-top:22px; font-size:12px;">Megroove — コーヒーとレコードの記録アプリ</p>
     </div>
   </footer>
